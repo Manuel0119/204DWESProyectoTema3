@@ -91,9 +91,13 @@
                     <td><a href="mostrarcodigo/muestraEjercicio16.php"><img src="webroot/mostrarcodigo.png" alt="ejecutar" class="imagen2"/></a></td>
                 </tr>
                 <tr>
+                    <td>17. Inicializar un array (bidimensional con dos índices numéricos) donde almacenamos el nombre de las personas que tienen reservado el asiento en un teatro de 20 filas y 15 asientos por fila. (Inicializamos el array ocupando únicamente 5 asientos). Recorrer el array con distintas técnicas (foreach(), while(), for()) para mostrar los asientos ocupados en cada fila y las personas que lo ocupan.</td>
+                    <td><a href="codigoPHP/ejercicio17.php"><img src="webroot/ejecutar.png" alt="ejecutar" class="imagen2"/></a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio17.php"><img src="webroot/mostrarcodigo.png" alt="ejecutar" class="imagen2"/></a></td>
+                </tr>
+                <tr>
                     <td>20. Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
-                        AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.
-                    </td>
+                        AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.</td>
                     <td><a href="codigoPHP/ejercicio20.php"><img src="webroot/ejecutar.png" alt="ejecutar" class="imagen2"/></a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio20.php"><img src="webroot/mostrarcodigo.png" alt="ejecutar" class="imagen2"/></a>
                 </tr>

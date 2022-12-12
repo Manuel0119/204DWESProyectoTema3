@@ -16,7 +16,7 @@
     <body>
         <div class="encabezado">
             <h2>
-                16. Recorrer el array anterior utilizando funciones para obtener el mismo resultado
+                16. Recorrer el array anterior utilizando funciones para obtener el mismo resultado.
             </h2>
         </div>
         <?php
