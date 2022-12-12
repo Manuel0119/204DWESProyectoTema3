@@ -45,10 +45,6 @@
             .formulario tr:nth-child(1) input{
                 background-color: #F3F391;
             }
-             .formulario tr:nth-child(2) input{
-                background-color: #F3F391;
-            }
-            
         </style>
     </head>
     <body>
@@ -83,7 +79,7 @@
             //Validación formulario
             if (isset($_REQUEST['enviar'])) {
                 $aErrores['codigoDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['codigoDepartamento'], 3, 3, 1);
-                $aErrores['descripcionDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcionDepartamento'], 255, 1, 1);
+                $aErrores['descripcionDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcionDepartamento'], 255, 1, 0);
                 $aErrores['fechaAltaDepartamento'] = validacionFormularios::validarFecha($_REQUEST['fechaAltaDepartamento'], $fechaFormateada);
                 //Recorrer el array de errores comprobando cada uno de los campos del formulario, asignándole false a la variable booleana si uno de los campos no es correcto.
                 foreach ($aErrores as $claveError => $mensajeError) {
@@ -99,20 +95,16 @@
             if ($entradaOk) {
                 $aRespuestas['codigoDepartamento'] = $_REQUEST['codigoDepartamento'];
                 $aRespuestas['descripcionDepartamento'] = $_REQUEST['descripcionDepartamento'];
-                $aRespuestas['fechaAltaDepartamento'] = new DateTime($_REQUEST['fechaAltaDepartamento']);
-                echo '<table style="width: 130%;">';
+                $ofechaFormulario = new DateTime($_REQUEST['fechaAltaDepartamento']);
+                $fechaFormularioFormateada = date_format($ofechaFormulario, "d-m-Y");
+                $aRespuestas['fechaAltaDepartamento'] = $fechaFormularioFormateada;
+                echo '<table>';
                 echo '<th style="text-align: center;" colspan="2";>' . "Datos Insertados" . "</th>";
                 foreach ($aRespuestas as $claveRespuesta => $valorRespuesta) {
                     echo '<tr>';
                     if (!empty($valorRespuesta)) {
-                        if (is_object($valorRespuesta)) {
-                            $fechaFormateada2 = date_format($valorRespuesta, "d-m-Y");
-                            echo '<td style="text-align: center;">' . $claveRespuesta . "</td>";
-                            echo '<td style="text-align: center;">' . $fechaFormateada2 . "</td>";
-                        } else {
-                            echo '<td style="text-align: center;">' . $claveRespuesta . "</td>";
-                            echo '<td>' . $valorRespuesta . "</td>";
-                        }
+                        echo '<td style="text-align: center;">' . $claveRespuesta . "</td>";
+                        echo '<td>' . $valorRespuesta . "</td>";
                     }
                     echo '</tr>';
                 }
